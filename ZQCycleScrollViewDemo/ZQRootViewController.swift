@@ -13,4 +13,8 @@ class ZQRootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func actionForNextButton(_ sender: Any) {
+        navigationController?.pushViewController(ZQCycleScrollViewController(), animated: true)
+    }
 }

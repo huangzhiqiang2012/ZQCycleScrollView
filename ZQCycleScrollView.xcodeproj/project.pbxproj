@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64D576A422F7BC280022CCD7 /* ZQCycleScrollPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D576A222F7BC220022CCD7 /* ZQCycleScrollPageControl.swift */; };
+		64FDF73722F3EBF500FF2B15 /* ZQCycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FDF73522F3EBEE00FF2B15 /* ZQCycleCollectionViewCell.swift */; };
+		64FDF73922F4067E00FF2B15 /* ZQCycleScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FDF73822F4067E00FF2B15 /* ZQCycleScrollViewController.swift */; };
 		95F8194822939C36002BA66F /* ZQAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8194722939C36002BA66F /* ZQAppDelegate.swift */; };
 		95F8194A22939C36002BA66F /* ZQRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8194922939C36002BA66F /* ZQRootViewController.swift */; };
 		95F8194D22939C36002BA66F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F8194B22939C36002BA66F /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		37D1A9B731B726445EA79889 /* Pods-ZQCycleScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZQCycleScrollView.debug.xcconfig"; path = "Target Support Files/Pods-ZQCycleScrollView/Pods-ZQCycleScrollView.debug.xcconfig"; sourceTree = "<group>"; };
+		64D576A222F7BC220022CCD7 /* ZQCycleScrollPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQCycleScrollPageControl.swift; sourceTree = "<group>"; };
+		64FDF73522F3EBEE00FF2B15 /* ZQCycleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQCycleCollectionViewCell.swift; sourceTree = "<group>"; };
+		64FDF73822F4067E00FF2B15 /* ZQCycleScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQCycleScrollViewController.swift; sourceTree = "<group>"; };
 		68194D42417BE3F4DBF0A564 /* Pods-ZQCycleScrollViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZQCycleScrollViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-ZQCycleScrollViewDemo/Pods-ZQCycleScrollViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		86BF2BF01270FC9C5BA4774B /* Pods_ZQCycleScrollViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZQCycleScrollViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF3DFFB2984AB78A0599F6E /* Pods-ZQCycleScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZQCycleScrollView.release.xcconfig"; path = "Target Support Files/Pods-ZQCycleScrollView/Pods-ZQCycleScrollView.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			children = (
 				95F8194722939C36002BA66F /* ZQAppDelegate.swift */,
 				95F8194922939C36002BA66F /* ZQRootViewController.swift */,
+				64FDF73822F4067E00FF2B15 /* ZQCycleScrollViewController.swift */,
 				95F8194B22939C36002BA66F /* Main.storyboard */,
 				95F8194E22939C37002BA66F /* Assets.xcassets */,
 				95F8195022939C37002BA66F /* LaunchScreen.storyboard */,
@@ -125,6 +132,8 @@
 			children = (
 				95F819602293A0B8002BA66F /* ZQCycleScrollView.h */,
 				95F8196B2293A25E002BA66F /* ZQCycleScrollView.swift */,
+				64D576A222F7BC220022CCD7 /* ZQCycleScrollPageControl.swift */,
+				64FDF73522F3EBEE00FF2B15 /* ZQCycleCollectionViewCell.swift */,
 				95F8196D2293A2FC002BA66F /* ZQCycleScrollConfig.swift */,
 				95F819612293A0B8002BA66F /* Info.plist */,
 			);
@@ -149,7 +158,6 @@
 				68194D42417BE3F4DBF0A564 /* Pods-ZQCycleScrollViewDemo.debug.xcconfig */,
 				FB954E423311CB0FB898A4B3 /* Pods-ZQCycleScrollViewDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -176,7 +184,7 @@
 				95F8194122939C36002BA66F /* Frameworks */,
 				95F8194222939C36002BA66F /* Resources */,
 				95F8196A2293A0B8002BA66F /* Embed Frameworks */,
-				D0ED265E5FB737E2F97C128D /* [CP] Embed Pods Frameworks */,
+				D95AD746F48669FC5B3D89D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,22 +318,17 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D0ED265E5FB737E2F97C128D /* [CP] Embed Pods Frameworks */ = {
+		D95AD746F48669FC5B3D89D6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ZQCycleScrollViewDemo/Pods-ZQCycleScrollViewDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ZQCycleScrollViewDemo/Pods-ZQCycleScrollViewDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ZQCycleScrollViewDemo/Pods-ZQCycleScrollViewDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -341,6 +344,7 @@
 			files = (
 				95F8194A22939C36002BA66F /* ZQRootViewController.swift in Sources */,
 				95F8194822939C36002BA66F /* ZQAppDelegate.swift in Sources */,
+				64FDF73922F4067E00FF2B15 /* ZQCycleScrollViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +352,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FDF73722F3EBF500FF2B15 /* ZQCycleCollectionViewCell.swift in Sources */,
+				64D576A422F7BC280022CCD7 /* ZQCycleScrollPageControl.swift in Sources */,
 				95F8196E2293A2FC002BA66F /* ZQCycleScrollConfig.swift in Sources */,
 				95F8196C2293A25E002BA66F /* ZQCycleScrollView.swift in Sources */,
 			);

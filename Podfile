@@ -6,7 +6,7 @@ target 'ZQCycleScrollView' do
   use_frameworks!
 
   # Pods for ZQCycleScrollView
-pod 'SDWebImage', '>= 5.0.0'
+pod 'Kingfisher'
 
 end
 
