@@ -12,12 +12,12 @@ import Kingfisher
 // MARK: 轮播视图cell
 public class ZQCycleCollectionViewCell: UICollectionViewCell {
     
-    fileprivate lazy var imageView:UIImageView = {
+    private lazy var imageView:UIImageView = {
         let imageView:UIImageView = UIImageView()
         return imageView
     }()
     
-    fileprivate lazy var titleLabel:UILabel = {
+    private lazy var titleLabel:UILabel = {
         let titleLabel:UILabel = UILabel()
         return titleLabel
     }()
@@ -27,7 +27,7 @@ public class ZQCycleCollectionViewCell: UICollectionViewCell {
     public var config:ZQCycleScrollConfig? {
         didSet {
             guard let config = config else { return }
-            switch config.style {
+            switch config.contentConfig.style {
             case .onlyImage:
                 imageView.isHidden = false
                 titleLabel.isHidden = true
@@ -68,12 +68,12 @@ public class ZQCycleCollectionViewCell: UICollectionViewCell {
 
 // MARK: private
 extension ZQCycleCollectionViewCell {
-    fileprivate func setupView() {
+    private func setupView() {
         contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)
     }
     
-    fileprivate func showImage() {
+    private func showImage() {
         guard let config = config else { return }
         let imageConfig = config.imageConfig
         if let index = index {
@@ -92,7 +92,7 @@ extension ZQCycleCollectionViewCell {
         }
     }
     
-    fileprivate func showTitle() {
+    private func showTitle() {
         guard let config = config else { return }
         let titleConfig = config.titleConfig
         if let index = index {

@@ -54,23 +54,27 @@ public enum ZQCyclePageControlAliment {
     case left
 }
 
-// MARK: 轮播视图图片配置对象
-public class ZQCycleScrollImageConfig: NSObject {
+// MARK: 轮播视图内容配置对象
+public class ZQCycleScrollContentConfig: NSObject {
     
-    /// 图片
-    public var imageArr:[String]?
+    /// 显示风格, 默认是纯图片
+    public var style:ZQCycleScrollStyle = .onlyImage
     
     /// 自动滚动间隔时间, 默认 2s
     public var autoScrollTimeInterval:CGFloat = 2.0
-    
-    /// 是否无限循环, 默认 true
-    public var infiniteLoop:Bool = true
     
     /// 是否自动滚动, 默认 true
     public var autoScroll:Bool = true
     
     /// 滚动方向，默认 水平
     public var scrollDirection:ZQCycleScrollDirection = .horizontal
+}
+
+// MARK: 轮播视图图片配置对象
+public class ZQCycleScrollImageConfig: NSObject {
+    
+    /// 图片
+    public var imageArr:[String]?
     
     /// 图片填充模式, 默认 .scaleToFill
     public var contentMode:UIView.ContentMode = .scaleToFill
@@ -150,8 +154,8 @@ public class ZQCycleScrollPageControlConfig: NSObject {
 // MARK: 轮播视图配置对象
 public class ZQCycleScrollConfig: NSObject {
     
-    /// 显示风格, 默认是纯图片
-    public var style:ZQCycleScrollStyle = .onlyImage
+    /// 内容配置对象
+    public var contentConfig:ZQCycleScrollContentConfig = ZQCycleScrollContentConfig()
     
     /// 图片配置对象
     public var imageConfig:ZQCycleScrollImageConfig = ZQCycleScrollImageConfig()

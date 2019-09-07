@@ -11,7 +11,7 @@ import UIKit
 // MARK: 分页控制器
 public class ZQCycleScrollPageControl: UIControl {
     
-    fileprivate var config:ZQCycleScrollPageControlConfig?
+    private var config:ZQCycleScrollPageControlConfig?
     
     public var currentPage:NSInteger? {
         didSet {
